@@ -1,0 +1,58 @@
+<!-- index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Bienvenidos a Tenis</h1>
+<p>Esta es la página de inicio</p>
+
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-md-4 d-flex justify-content-center">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" class="card-img-top" alt="Logo de Tenis">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Nike Air Max Dn</h5>
+                    <p class="card-text">Presentamos la nueva generación de tecnología Air. Las Air Max Dn cuentan con
+                        nuestro sistema de unidades Dynamic Air de tubos de presión dual para ofrecer reactividad en
+                        cada
+                        pisada.</p>
+                    <a href="#" class="btn btn-primary mt-auto align-self-center">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 d-flex justify-content-center">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='img/img4.png') }}" class="card-img-top" alt="Logo de Tenis">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Nike Air VaporMax 2023 Flyknit</h5>
+                    <p class="card-text">¿Has caminado alguna vez sobre el aire? Con las Air VaporMax 2023, sabrás lo
+                        que se siente. La innovadora tecnología se revela a través de la plantilla perforada (y más
+                        cosas).</p>
+                    <a href="#" class="btn btn-primary mt-auto align-self-center">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 d-flex justify-content-center">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='img/img5.png') }}" class="card-img-top" alt="Logo de Tenis">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Jumpman MVP</h5>
+                    <p class="card-text">No inventamos los remix, pero teniendo en cuenta el material con el que
+                        probamos, este modelo es ideal. Hemos tomado elementos de las AJ6, las 7 y las 8 para crear unas
+                        zapatillas completamente nuevas que rinden homenaje a los primeros tres campeonatos consecutivos
+                        de MJ.
+                    </p>
+                    <a href="#" class="btn btn-primary mt-auto align-self-center">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+{% endblock %}
