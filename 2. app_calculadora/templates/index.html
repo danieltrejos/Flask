@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Calculadora aritmetica</h1>
+<p>Esto es una calculadora aritmetica</p>
+<p>Ingresa datos númericos: </p>
+
+<form action="/" method="POST">
+    <!-- Inputs -->
+    <div class="row">
+        <div class="col-md-6">
+            <input type="number" class="form-control" name="n1" placeholder="Ingresa el primer número: "
+                aria-label="Ingresa el primer número: ">
+        </div>
+
+        <div class="col-md-6">
+            <input type="number" class="form-control" name="n2" placeholder="Ingresa el segundo número: "
+                aria-label="Ingresa el segundo número">
+        </div>
+    </div>
+    <!-- Boton de enviar -->
+    <div class="row py-3">
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">
+                Calcular
+            </button>
+        </div>
+    </div>
+
+</form>
+
+<!-- Resultados -->
+<div class="row py-3">
+    <div class="col">
+        <p>Resultados:</p>
+        <h3>La suma es: {{total_suma}}</h3>
+        <h3>La resta es: {{total_resta}}</h3>
+        <h3>La multiplicación es: {{total_multiplicacion}}</h3>
+        <h3>La división: {{total_division}}</h3>
+    </div>
+</div>
+
+{% endblock %}

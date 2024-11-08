@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Conversor de divisas</h1>
+<p>Esto es un conversor de divisas</p>
+<p>Ingresa la cantidad de dolares a convertir: </p>
+
+<form action="/divisas" method="POST">
+    <!-- Inputs -->
+    <div class="row">
+        <div class="col-md-6">
+            <input type="number" class="form-control" name="usd"
+                placeholder="Ingresa el la cantidad de dolares a convertir: "
+                aria-label="Ingresa Cantidad de dolares: ">
+        </div>
+
+
+    </div>
+    <!-- Boton de enviar -->
+    <div class="row py-3">
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">
+                Convertir
+            </button>
+        </div>
+    </div>
+
+</form>
+
+<!-- Resultados -->
+<div class="row py-3">
+    <div class="col">
+        <p>Resultados de conversion de {{dolar}} Dolar:</p>
+        <h3>Equivalen a ${{cop}} pesos colombianos </h3>
+        <h3>Equivalen a ${{mxn}} pesos mexicanos </h3>
+        <h3>Equivalen a €{{eur}} Euros </h3>
+
+    </div>
+</div>
+
+{% endblock %}
