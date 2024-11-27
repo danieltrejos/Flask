@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}Juegos{% endblock %}
+
+{% block contenido %}
+<main class="flex-grow-1 d-flex flex-column">
+
+    <div class="container my-4">
+        <div class="col">
+
+            <div class="d-flex flex-column">
+                <h3 class="h3 titulo-juego bold tracking-in-expand-fwd" style="color: #b1bbce">Juegos Disponibles</h3>
+                <a href="{{ url_for('formulario_agregar_juego')}}"
+                    class="btn boton btn-sm mb-3 escalar botones view-transition p-2 col-2"><i
+                        class="fa-sharp fa-regular fa-plus mx-2"></i>Agregar</a>
+            </div>
+
+            <table class="table formulario mt-2" style="background-color:#33475b">
+                <thead>
+                    <tr class="text-center">
+                        <th>Item</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Detalles</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for juego in juegos %}
+                    <tr>
+                        <th class="text-center">{{loop.index}}</th>
+                        <td>{{ juego[1] }}</td>
+                        <td>{{ juego[2] }}</td>
+                        <td><span>$</span> {{ juego[3] }}</td>
+                        <td class="text-center">
+                            <a href="#" class="btn boton btn-sm text-light escalar botones">
+                                <i class="fa-solid fa-eye"></i></a>
+                        </td>
+                        <td class="text-center">
+                            <a href="{{ url_for('editar_juego', id=juego[0])}}"
+                                class="btn boton btn-sm text-light escalar botones"><i
+                                    class="fa-regular fa-pen-to-square"></i></a>
+                        </td>
+                        <td class="text-center">
+                            <form action="{{ url_for('eliminar_juego')}}" method="POST" class="d-inline">
+                                <input type="hidden" name="id" value="{{ juego[0] }}">
+                                <button class="btn btn-danger btn-sm escalar botones" id="eliminar"><i
+                                        class="fa-solid fa-x "></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

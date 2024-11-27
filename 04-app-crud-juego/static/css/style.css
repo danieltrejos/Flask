@@ -1,0 +1,263 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* --gradiente-fondo:linear-gradient(#000000,#000099); */
+
+    --fondo-1: #000D26;
+    --fondo-2: #010101;
+    --color-border: #163159;
+
+    --color-fuente: #b1bbce;
+    /* Botones */
+    --color-btn-fondo: #2b426a;
+    --color-btn-hover: #384D73;
+
+    /* Transicion */
+    --transition-duration: 0.5s;
+}
+
+
+/* Transición entre páginas */
+::view-transition-old {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+::view-transition-new {
+    opacity: 0;
+    transform: translateY(50px);
+    /* La nueva vista entra desde abajo */
+    animation: fadeIn var(--transition-duration) ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* USAR POPPINS PARA ENCABEZADOS Y NUNITO PARA TEXTO */
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    /*Titulos mas destacados*/
+}
+
+h3 {
+    color: var(--color-fuente);
+}
+
+html,
+body {
+    /* background: var(--fondo-1); */
+    background: radial-gradient(var(--fondo-1), var(--fondo-2));
+    margin: 0;
+
+}
+
+footer {
+    width: 100%;
+    background: linear-gradient(var(--fondo-2), var(--fondo-1));
+    color: var(--color-fuente);
+    text-align: center;
+
+    border-top: 1px solid var(--color-border);
+}
+
+
+
+
+.header {
+    background: linear-gradient(var(--fondo-1), var(--fondo-2));
+    border-bottom: 1px solid var(--color-border);
+
+}
+
+.escalar {
+    transition: transform 0.2s ease;
+
+}
+
+.escalar:hover {
+    transform: scale(1.2);
+    border: 1 solid var(--color-btn-hover);
+}
+
+
+
+.botones {
+    min-width: 60px;
+}
+
+.boton {
+    background-color: var(--color-btn-fondo);
+    color: var(--color-fuente);
+}
+
+.boton:hover {
+
+    background-color: var(--color-btn-hover);
+    color: var(--color-fuente);
+
+}
+
+.formulario {
+    background-color: #041938;
+    /* -webkit-box-shadow: 11px 5px 26px -2px rgba(108, 44, 235, 1);
+    -moz-box-shadow: 11px 5px 26px -2px rgba(108, 44, 235, 1);
+    box-shadow: 11px 5px 26px -2px rgba(108, 44, 235, 1); */
+
+    /* -webkit-box-shadow: 11px 5px 26px -2px rgba(255, 136, 255, 1);
+    -moz-box-shadow: 11px 5px 26px -2px rgba(255, 136, 255, 1);
+    box-shadow: 11px 5px 26px -2px rgba(255, 136, 255, 1);
+ */
+    -webkit-box-shadow: 11px 5px 16px -8px rgba(255, 136, 255, 1);
+    -moz-box-shadow: 11px 5px 16px -8px rgba(255, 136, 255, 1);
+    box-shadow: 11px 5px 16px -8px rgba(255, 136, 255, 1);
+}
+
+label {
+    color: var(--color-fuente);
+}
+
+
+
+.table th,
+.table td {
+    background-color: #041938;
+    /* Fondo de la tabla */
+    border-bottom: 1px solid var(--color-border);
+    /* Opcional: bordes para el encabezado */
+    color: #b1bbce;
+}
+
+.table thead th {
+    border-bottom: 1px solid var(--color-border);
+    /* Opcional: bordes para el encabezado */
+}
+
+.table tbody tr:hover {
+    background-color: #2b426a;
+    /* Opcional: color de fondo para hover en las filas */
+}
+
+
+
+
+/*! Todo */
+/*
+Estilar boton ayuda ✅
+Cambiar color bnoton ambirgeusa ❌
+
+Estilar text del logo ✅
+Animar Boton agregar -Borde brillante 
+Estilar el menu de agregar juego
+Colocar un modal con descripcion e imagen del juego
+Animar el Footer✅
+Añadir imagen icono de ver (Modal)
+
+*/
+
+
+/* --------Animacion: titulo h1 */
+
+.tracking-in-expand-fwd {
+    animation: tracking-in-expand-fwd 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+/* Keyframes */
+@keyframes tracking-in-expand-fwd {
+    0% {
+        letter-spacing: -0.5em;
+        transform: translateZ(-700px);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+/* --------Animacion: Footer */
+
+.tracking-in-contract {
+    animation: tracking-in-contract .5s ease-in both;
+}
+
+@keyframes tracking-in-contract {
+    0% {
+        letter-spacing: 1em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        letter-spacing: normal;
+        opacity: 1;
+    }
+}
+
+
+/* Degradado de texto Logo */
+
+.texto {
+    background: -webkit-linear-gradient(#95339E, #ae4eac, #FFC8FF, #d17fd6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Transicion en la tabla */
+
+
+/* Tabla oculta inicialmente */
+.table {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    /* Transición suave */
+}
+
+/* Cuando la clase 'loaded' está en el body */
+body.loaded .table {
+    opacity: 1;
+    /* Hace la tabla visible */
+}
+
+
+.table td {
+    white-space: nowrap;
+    /* Evita que el contenido se divida en varias líneas */
+
+    /* Centra horizontalmente */
+    vertical-align: middle;
+    /* Centra verticalmente */
+}
+
+.table td span {
+    display: inline-block;
+    /* Asegura que el signo de dólar y el valor estén en línea */
+    margin-right: 5px;
+    /* Espaciado opcional entre el signo y el valor */
+}
