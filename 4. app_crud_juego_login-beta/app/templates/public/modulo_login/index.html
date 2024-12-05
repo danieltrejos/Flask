@@ -1,0 +1,36 @@
+{% extends 'public/modulo_login/base_login.html' %}
+{% block title %}Login | AppGamer{% endblock %}
+
+{% block body %}
+
+<div class="container flex-column mt-5">
+  <div class="col justify-content-center mt-5 mb-5 gap-3">
+
+    <!--Login-->
+    <div class="col-md-6 cajaLogin px-5" id="styleLogin">
+      <div class="mb-12">
+        <a href="{{ url_for('inicio') }}">
+          <img src="{{url_for('static', filename ='assets/imgs/logo.avif') }}" alt="Logo" class="logoLogin">
+        </a>
+      </div>
+      {% include 'public/modulo_login/login.html' %}
+    </div>
+
+
+    <!---Register User-->
+    <div class="col-md-6 px-5 formRegisterUser" id="styleLogin2" style="display:none;">
+      <a href="{{ url_for('inicio') }}">
+        <img src="{{url_for('static', filename ='assets/imgs/logo.avif') }}" alt="Logo" class="logoLogin">
+      </a>
+      {% include 'public/modulo_login/registerUser.html' %}
+    </div>
+    <!---fin register User-->
+
+  </div>
+  {% include 'public/dashboard/pages/alerts.html' %}
+</div>
+<!---Mensales - alertas-->
+
+
+
+{% endblock %}
